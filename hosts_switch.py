@@ -91,8 +91,9 @@ def __main__():
 
     if len(sys.argv) > 2 and str(sys.argv[1]).lower() == "-l" and len(sys.argv[2]) > 0:
         print("\tload to hosts:")
-        print("\t" + sys.argv[2])
         src_path = os.path.join(save_path, sys.argv[2])
+        print("\tloading " + src_path)
+        print("\tto " + des_path)
         if os.path.isfile(des_path) and os.path.isfile(src_path):
             shutil.copymode(des_path, src_path)
             os.remove(des_path)
